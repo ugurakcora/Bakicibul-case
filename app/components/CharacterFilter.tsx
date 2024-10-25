@@ -25,9 +25,9 @@ export default function CharacterFilter({
   };
 
   return (
-    <div className="flex space-x-4 mb-4">
+    <div className="flex space-x-4 mb-4 items-center">
       <select
-        className="border p-2"
+        className="border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200 text-gray-800 font-semibold"
         value={status}
         onChange={(e) => setStatus(e.target.value || undefined)}
       >
@@ -37,7 +37,7 @@ export default function CharacterFilter({
         <option value="unknown">Unknown</option>
       </select>
       <select
-        className="border p-2"
+        className="border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200 text-gray-800 font-semibold"
         value={gender}
         onChange={(e) => setGender(e.target.value || undefined)}
       >
@@ -48,7 +48,7 @@ export default function CharacterFilter({
         <option value="unknown">Unknown</option>
       </select>
       <button
-        className="bg-blue-500 text-white p-2 rounded"
+        className="bg-blue-600 text-white p-2 rounded-md hover:bg-blue-700 transition duration-200 font-bold"
         onClick={handleApplyFilters}
       >
         Apply Filters
