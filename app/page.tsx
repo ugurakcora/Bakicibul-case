@@ -10,24 +10,24 @@ export interface Character {
   gender: string;
 }
 
-const HomePage = async ({
-  searchParams,
-}: {
-  searchParams: Promise<{ status?: string; gender?: string }>;
-}) => {
-  const params = await searchParams;
-  const initialCharacters: Character[] = await fetchCharacters(params);
+interface HomePageProps {
+  searchParams: { status?: string; gender?: string };
+}
+
+export default async function HomePage({
+  searchParams: initialSearchParams,
+}: HomePageProps) {
+  const searchParams = await initialSearchParams;
+  const initialCharacters: Character[] = await fetchCharacters(searchParams);
 
   return (
     <div className="p-8">
       <h1 className="text-2xl font-bold mb-4">Rick and Morty Characters</h1>
       <CharacterFilter
-        initialStatus={params.status}
-        initialGender={params.gender}
+        initialStatus={searchParams.status}
+        initialGender={searchParams.gender}
       />
       <CharacterList characters={initialCharacters} />
     </div>
   );
-};
-
-export default HomePage;
+}

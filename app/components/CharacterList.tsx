@@ -1,5 +1,3 @@
-"use client";
-
 import { Character } from "../page";
 import Image from "next/image";
 import "../globals.css";
@@ -23,9 +21,9 @@ const CharacterList = ({ characters }: CharacterListProps) => {
             height={300}
             className="mb-2 rounded"
           />
-          <h2 className="font-bold text-lg">{character.name}</h2>{" "}
-          <p className="text-gray-600">Status: {character.status}</p>{" "}
-          <p className="text-gray-600">Gender: {character.gender}</p>{" "}
+          <h2 className="font-bold text-lg">{character.name}</h2>
+          <p className="text-gray-600">Status: {character.status}</p>
+          <p className="text-gray-600">Gender: {character.gender}</p>
         </div>
       ))}
     </div>
