@@ -31,9 +31,7 @@ export default function CharacterFilter({
         value={status}
         onChange={(e) => setStatus(e.target.value || undefined)}
       >
-        <option value="" disabled>
-          Status
-        </option>
+        <option value="">Status</option>
         <option value="alive">Alive</option>
         <option value="dead">Dead</option>
         <option value="unknown">Unknown</option>
@@ -43,9 +41,7 @@ export default function CharacterFilter({
         value={gender}
         onChange={(e) => setGender(e.target.value || undefined)}
       >
-        <option value="" disabled>
-          Gender
-        </option>
+        <option value="">Gender</option>
         <option value="male">Male</option>
         <option value="female">Female</option>
         <option value="genderless">Genderless</option>
