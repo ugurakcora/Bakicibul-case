@@ -11,13 +11,14 @@ export interface Character {
 }
 
 interface HomePageProps {
-  searchParams: { status?: string; gender?: string };
+  searchParams: Promise<{ status?: string; gender?: string }>;
 }
 
 export default async function HomePage({
   searchParams: initialSearchParams,
 }: HomePageProps) {
-  const { status, gender } = await initialSearchParams;
+  const searchParams = await initialSearchParams;
+  const { status, gender } = searchParams;
 
   const initialCharacters = await fetchCharacters({ status, gender });
 
